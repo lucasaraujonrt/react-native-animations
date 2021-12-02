@@ -1,14 +1,62 @@
 import React from 'react';
-import Row from '@mobile/components/Grid/Row/Row';
+import { FlatList, View, Text, TouchableOpacity } from 'react-native';
+
 import { Background } from '@mobile/components';
-import EmptyState from '../../assets/svg/ic_development.svg';
+import useDimensions from '@mobile/hooks/useDimensions';
+import navigationService from '@mobile/services/navigation';
+
+interface IAnimationList {
+  name: string;
+  navigate: string;
+}
+
+const AnimationList: IAnimationList[] = [
+  {
+    name: 'Pan Gesture  💅 ',
+    navigate: 'PanGesture',
+  },
+  {
+    name: 'Transitions  💅 ',
+    navigate: 'PanGesture',
+  },
+  {
+    name: 'Pan Gesture  💅 ',
+    navigate: 'PanGesture',
+  },
+  {
+    name: 'Pan Gesture  💅 ',
+    navigate: 'PanGesture',
+  },
+];
 
 const Home: React.FC = () => {
+  const { width } = useDimensions();
+
   return (
-    <Background scrollView>
-      <Row alignSelf="center" pdTop={20}>
-        <EmptyState />
-      </Row>
+    <Background barStyle="dark-content" backgroundColor="white">
+      <FlatList
+        data={AnimationList}
+        renderItem={({ item, index }) => (
+          <TouchableOpacity
+            onPress={() => navigationService.navigate(item.navigate)}
+            key={index.toString()}
+          >
+            <View
+              style={{
+                width,
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: 20,
+                borderWidth: 0.2,
+              }}
+            >
+              <Text style={{ color: 'black', fontWeight: '600' }}>
+                {item.name}
+              </Text>
+            </View>
+          </TouchableOpacity>
+        )}
+      />
     </Background>
   );
 };

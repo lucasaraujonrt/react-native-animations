@@ -1,7 +1,11 @@
 import React from 'react';
-import { createStack } from './services/navigation';
+import { View, Text, TouchableOpacity, Linking } from 'react-native';
+
 import Login from './pages/Auth/Login';
+import Home from './pages/Home';
+import PanGesture from './pages/PanGesture';
 import TabNavigator from './routes/TabNavigator';
+import { createStack } from './services/navigation';
 
 const MainStack = createStack();
 const ContentStack = createStack();
@@ -26,9 +30,44 @@ const ContentNavigator = () => (
   </ContentStack.Navigator>
 );
 
+const onPressLink = () => Linking.openURL('https://github.com/lucasaraujonrt');
+
 const AuthNavigator = () => (
-  <StartStack.Navigator screenOptions={{ headerShown: false }}>
+  <StartStack.Navigator>
+    <StartStack.Screen
+      name="Home"
+      component={Home}
+      options={{
+        headerTitle: () => (
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+            }}
+          >
+            <Text>Code with ♥️ by </Text>
+            <TouchableOpacity onPress={onPressLink}>
+              <Text
+                style={{
+                  textDecorationLine: 'underline',
+                  color: 'blue',
+                }}
+              >
+                @lucasaraujonrt
+              </Text>
+            </TouchableOpacity>
+          </View>
+        ),
+      }}
+    />
     <StartStack.Screen name="Login" component={Login} />
+    <StartStack.Screen
+      name="PanGesture"
+      component={PanGesture}
+      options={{ headerTitle: 'PanGesture' }}
+    />
   </StartStack.Navigator>
 );
 

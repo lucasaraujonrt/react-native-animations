@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Snapshot should be render 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+    ]
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "center",
+        "backgroundColor": "#66519E",
+        "borderRadius": 200,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingVertical": 13.34,
+        "width": 525,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontSize": 32.14285714285714,
+          },
+        ]
+      }
+    >
+      testing
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Button Snapshot should be render with loading 1`] = `
+<View
+  style={
+    Array [
+      Object {},
+    ]
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "center",
+        "backgroundColor": "#66519E",
+        "borderRadius": 200,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingVertical": 13.34,
+        "width": 525,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontSize": 32.14285714285714,
+          },
+        ]
+      }
+    >
+      testing
+    </Text>
+    <ActivityIndicator
+      animating={true}
+      color="#999999"
+      hidesWhenStopped={true}
+      size="small"
+      style={
+        Array [
+          Object {
+            "paddingLeft": 13.34,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;

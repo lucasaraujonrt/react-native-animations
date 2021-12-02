@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid Snapshot should be render Col component 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "column",
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+      },
+    ]
+  }
+>
+  <View />
+</View>
+`;
+
+exports[`Grid Snapshot should be render Row component 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+      },
+    ]
+  }
+>
+  <View />
+</View>
+`;

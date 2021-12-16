@@ -11,3 +11,11 @@ export const PanGestureConstants = {
 };
 
 export const Transition = {};
+
+export const SquareStick = {
+  SIZE: 150,
+  V_FACTOR: 2.5,
+  H_FACTOR: 0.3,
+  progress: 1,
+  MAX_HEIGHT: 150 * 2.5,
+};

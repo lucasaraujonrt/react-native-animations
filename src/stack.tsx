@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, TouchableOpacity, Linking, Image } from 'react-native';
 
+import { links } from './config';
 import Login from './pages/Auth/Login';
 import Home from './pages/Home';
 import PanGesture from './pages/PanGesture';
+import SquareStick from './pages/SquareStick';
 import TabNavigator from './routes/TabNavigator';
 import { createStack } from './services/navigation';
 
@@ -30,7 +32,7 @@ const ContentNavigator = () => (
   </ContentStack.Navigator>
 );
 
-const onPressLink = () => Linking.openURL('https://github.com/lucasaraujonrt');
+const onPressLink = () => Linking.openURL(links.github);
 
 const AuthNavigator = () => (
   <StartStack.Navigator>
@@ -44,6 +46,7 @@ const AuthNavigator = () => (
               flexDirection: 'row',
               justifyContent: 'center',
               alignItems: 'center',
+              alignSelf: 'center',
               width: '100%',
             }}
           >
@@ -67,6 +70,11 @@ const AuthNavigator = () => (
       name="PanGesture"
       component={PanGesture}
       options={{ headerTitle: 'PanGesture' }}
+    />
+    <StartStack.Screen
+      name="SquareStick"
+      component={SquareStick}
+      options={{ headerTitle: 'SquareStick' }}
     />
   </StartStack.Navigator>
 );

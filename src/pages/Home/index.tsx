@@ -20,8 +20,8 @@ const AnimationList: IAnimationList[] = [
     navigate: 'PanGesture',
   },
   {
-    name: 'Pan Gesture  💅 ',
-    navigate: 'PanGesture',
+    name: 'SquareStick  💅 ',
+    navigate: 'SquareStick',
   },
   {
     name: 'Pan Gesture  💅 ',
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 padding: 20,
-                borderWidth: 0.2,
+                borderBottomWidth: 0.2,
               }}
             >
               <Text style={{ color: 'black', fontWeight: '600' }}>

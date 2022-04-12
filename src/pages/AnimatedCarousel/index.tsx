@@ -2,19 +2,44 @@ import React, { useRef } from 'react';
 import {
   View,
   Dimensions,
-  Image,
   StyleSheet,
   Animated,
   StatusBar,
 } from 'react-native';
+import {
+  State,
+  PinchGestureHandler,
+  GestureEvent,
+} from 'react-native-gesture-handler';
 
 import Mock from '@mobile/mock/animatedImageCarousel';
 
 const AnimatedCarousel = () => {
   const { width } = Dimensions.get('window');
+  const scale = useRef(new Animated.Value(1)).current;
   const imageW = width * 0.7;
   const imageH = imageW * 1.54;
   const scrollX = useRef(new Animated.Value(0)).current;
+
+  const onPinchEvent = Animated.event(
+    [
+      {
+        nativeEvent: { scale },
+      },
+    ],
+    {
+      useNativeDriver: true,
+    }
+  );
+
+  const onPinchStateChange = (event: GestureEvent) => {
+    if (event.nativeEvent.oldState === State.ACTIVE) {
+      Animated.spring(scale, {
+        toValue: 1,
+        useNativeDriver: true,
+      }).start();
+    }
+  };
 
   return (
     <>
@@ -47,6 +72,7 @@ const AnimatedCarousel = () => {
           data={Mock.data}
           horizontal
           pagingEnabled
+          pinchGestureEnabled={false}
           showsHorizontalScrollIndicator={false}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { x: scrollX } } }],
@@ -62,15 +88,22 @@ const AnimatedCarousel = () => {
                 elevation: 5,
               }}
             >
-              <Image
-                source={{ uri: item }}
-                style={{
-                  width: imageW,
-                  height: imageH,
-                  resizeMode: 'cover',
-                  borderRadius: 10,
-                }}
-              />
+              <PinchGestureHandler
+                onGestureEvent={onPinchEvent}
+                onHandlerStateChange={onPinchStateChange}
+              >
+                <Animated.Image
+                  source={{ uri: item }}
+                  style={{
+                    width: imageW,
+                    height: imageH,
+                    resizeMode: 'cover',
+                    borderRadius: 10,
+                    transform: [{ scale }],
+                    position: 'absolute',
+                  }}
+                />
+              </PinchGestureHandler>
             </View>
           )}
         />

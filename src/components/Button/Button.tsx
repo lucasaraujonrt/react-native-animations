@@ -20,21 +20,19 @@ const Button = ({
   disabled,
   onPress,
   testID,
-}: IButton) => {
-  return (
-    <S.Container>
-      <S.Button
-        onPress={onPress}
-        width={width}
-        disabled={disabled}
-        testID={testID}
-      >
-        <S.Text>{title}</S.Text>
-        {icon && null}
-        {loading && <S.Loading animating={loading} />}
-      </S.Button>
-    </S.Container>
+}: IButton) => (
+  <S.Container>
+    <S.Button
+      onPress={onPress}
+      width={width}
+      disabled={disabled}
+      testID={testID}
+    >
+      <S.Text>{title}</S.Text>
+      {icon && null}
+      {loading && <S.Loading animating={loading} />}
+    </S.Button>
+  </S.Container>
   );
-};
 
 export default Button;

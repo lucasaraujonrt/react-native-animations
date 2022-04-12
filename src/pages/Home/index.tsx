@@ -12,30 +12,31 @@ interface IAnimationList {
 
 const AnimationList: IAnimationList[] = [
   {
-    name: 'Pan Gesture  💅 ',
+    name: 'Pan Gesture (Reanimated v2)  💅 ',
     navigate: 'PanGesture',
   },
   {
-    name: 'Transitions  💅 ',
-    navigate: 'PanGesture',
+    name: 'CI&T Calling (Moti)  💅 ',
+    navigate: 'PhoneCall',
   },
   {
-    name: 'SquareStick  💅 ',
+    name: 'SquareStick (Reanimated v2)  💅 ',
     navigate: 'SquareStick',
   },
   {
-    name: 'Pan Gesture  💅 ',
-    navigate: 'PanGesture',
+    name: 'Animated Carousel (Animated API)  💅 ',
+    navigate: 'AnimatedCarousel',
   },
 ];
 
-const Home: React.FC = () => {
+const Home = () => {
   const { width } = useDimensions();
 
   return (
     <Background barStyle="dark-content" backgroundColor="white">
       <FlatList
         data={AnimationList}
+        style={{ flexGrow: 1 }}
         renderItem={({ item, index }) => (
           <TouchableOpacity
             onPress={() => navigationService.navigate(item.navigate)}
@@ -47,7 +48,7 @@ const Home: React.FC = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 padding: 20,
-                borderBottomWidth: 0.2,
+                borderBottomWidth: AnimationList.length === index ? 0 : 0.2,
               }}
             >
               <Text style={{ color: 'black', fontWeight: '600' }}>

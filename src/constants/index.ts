@@ -19,3 +19,7 @@ export const SquareStick = {
   progress: 1,
   MAX_HEIGHT: 150 * 2.5,
 };
+
+export const PhoneCall = {
+  SIZE: 100,
+};

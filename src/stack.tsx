@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Linking, Image } from 'react-native';
+import { Text, TouchableOpacity, Linking } from 'react-native';
 
+import { Row } from './components';
 import { links } from './config';
+import AnimatedCarousel from './pages/AnimatedCarousel';
 import Login from './pages/Auth/Login';
 import Home from './pages/Home';
+import Matrix from './pages/Matrix';
 import PanGesture from './pages/PanGesture';
+import PhoneCall from './pages/PhoneCall';
 import SquareStick from './pages/SquareStick';
 import TabNavigator from './routes/TabNavigator';
 import { createStack } from './services/navigation';
@@ -40,17 +44,10 @@ const AuthNavigator = () => (
       name="Home"
       component={Home}
       options={{
+        headerTitleAlign: 'center',
         headerTitle: () => (
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center',
-              alignSelf: 'center',
-              width: '100%',
-            }}
-          >
-            <Text>Code with ♥️ by </Text>
+          <Row>
+            <Text>{'</>'} with ♥️ by </Text>
             <TouchableOpacity onPress={onPressLink}>
               <Text
                 style={{
@@ -61,7 +58,7 @@ const AuthNavigator = () => (
                 @lucasaraujonrt
               </Text>
             </TouchableOpacity>
-          </View>
+          </Row>
         ),
       }}
     />
@@ -75,6 +72,21 @@ const AuthNavigator = () => (
       name="SquareStick"
       component={SquareStick}
       options={{ headerTitle: 'SquareStick' }}
+    />
+    <StartStack.Screen
+      name="PhoneCall"
+      component={PhoneCall}
+      options={{ headerTitle: 'CI&T Calling' }}
+    />
+    <StartStack.Screen
+      name="AnimatedCarousel"
+      component={AnimatedCarousel}
+      options={{ headerShown: false }}
+    />
+    <StartStack.Screen
+      name="Matrix"
+      component={Matrix}
+      options={{ headerTitle: 'Matrix' }}
     />
   </StartStack.Navigator>
 );

@@ -3,7 +3,6 @@ import React, { PureComponent } from 'react';
 import { KeyboardAvoidingView, Platform } from 'react-native';
 import { connect } from 'react-redux';
 
-import { heightScale } from './services/dimensions';
 import { navigationRef } from './services/navigation';
 import Navigator from './stack';
 
@@ -13,7 +12,6 @@ class AppContent extends PureComponent {
       <KeyboardAvoidingView
         style={{
           flex: 1,
-          paddingTop: heightScale(0.05),
         }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >

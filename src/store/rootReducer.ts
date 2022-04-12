@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import loadingReducer from './Loading/reducer';
 
 const reducers = combineReducers({

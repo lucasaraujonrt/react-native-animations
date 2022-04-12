@@ -41,14 +41,14 @@ const PanGesture: React.FC = () => {
           velocity: velocityX,
         }),
         0,
-        boundX
+        boundX,
       );
       translateY.value = withBouncing(
         withDecay({
           velocity: velocityY,
         }),
         0,
-        boundY
+        boundY,
       );
     },
   });

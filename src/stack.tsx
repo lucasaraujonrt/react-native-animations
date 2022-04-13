@@ -7,6 +7,7 @@ import AnimatedCarousel from './pages/AnimatedCarousel';
 import Login from './pages/Auth/Login';
 import Home from './pages/Home';
 import Matrix from './pages/Matrix';
+import MindBlow from './pages/MindBlow';
 import PanGesture from './pages/PanGesture';
 import PhoneCall from './pages/PhoneCall';
 import SquareStick from './pages/SquareStick';
@@ -87,6 +88,11 @@ const AuthNavigator = () => (
       name="Matrix"
       component={Matrix}
       options={{ headerTitle: 'Matrix' }}
+    />
+    <StartStack.Screen
+      name="MindBlow"
+      component={MindBlow}
+      options={{ headerShown: false }}
     />
   </StartStack.Navigator>
 );

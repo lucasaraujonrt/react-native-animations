@@ -23,3 +23,9 @@ export const SquareStick = {
 export const PhoneCall = {
   SIZE: 100,
 };
+
+export const MindBlowConstants = {
+  CIRCLE_SIZE: 100,
+  RED: '#ED1941',
+  BLUE: '#20BEC6',
+};

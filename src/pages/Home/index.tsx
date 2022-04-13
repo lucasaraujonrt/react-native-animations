@@ -27,6 +27,10 @@ const AnimationList: IAnimationList[] = [
     name: 'Animated Carousel (Animated API)  💅 ',
     navigate: 'AnimatedCarousel',
   },
+  {
+    name: 'MindBlow (Animated API)  💅 ',
+    navigate: 'MindBlow',
+  },
 ];
 
 const Home = () => {

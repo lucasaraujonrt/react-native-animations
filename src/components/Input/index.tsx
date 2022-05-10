@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { TextInputProps } from 'react-native';
+import { Icon } from 'react-native-vector-icons/Icon';
+
 import { Text, TouchableOpacity } from '@mobile/components';
+
 import { Container, Input as StyledInput } from './styles';
 
-interface IInputProps extends TextInputProps {
+export interface IInputProps extends TextInputProps {
   title: string;
   password?: boolean;
+  errorMessage?: string;
+  error?: boolean
 }
 
 const Input = (props: IInputProps) => {
+  const { title, password, error } = props;
   const [focus, setFocus] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -18,13 +24,13 @@ const Input = (props: IInputProps) => {
 
   return (
     <Container>
-      <Text text={props.title} />
+      <Text {...{ text:title }} />
       <StyledInput
         {...props}
         showBorder={focus}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        secureTextEntry={props.password && showPassword}
+        secureTextEntry={password && showPassword}
       />
       {showPassword && (
         <TouchableOpacity onPress={handleShowPassword}>
@@ -34,6 +40,9 @@ const Input = (props: IInputProps) => {
             size={16}
           /> */}
         </TouchableOpacity>
+      )}
+      {error && (
+        <Text {...{ text: 'required field' }} />
       )}
     </Container>
   );

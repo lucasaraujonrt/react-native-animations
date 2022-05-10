@@ -29,3 +29,8 @@ export const MindBlowConstants = {
   RED: '#ED1941',
   BLUE: '#20BEC6',
 };
+
+export const CenterStyle = {
+  alignItems: 'center',
+  justifyContent: 'center',
+};

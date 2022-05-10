@@ -5,11 +5,13 @@ import { Row } from './components';
 import { links } from './config';
 import AnimatedCarousel from './pages/AnimatedCarousel';
 import Login from './pages/Auth/Login';
+import HocComponent from './pages/HocComponent';
 import Home from './pages/Home';
 import Matrix from './pages/Matrix';
 import MindBlow from './pages/MindBlow';
 import PanGesture from './pages/PanGesture';
 import PhoneCall from './pages/PhoneCall';
+import Shake from './pages/Shake';
 import SquareStick from './pages/SquareStick';
 import TabNavigator from './routes/TabNavigator';
 import { createStack } from './services/navigation';
@@ -48,7 +50,12 @@ const AuthNavigator = () => (
         headerTitleAlign: 'center',
         headerTitle: () => (
           <Row>
-            <Text>{'</>'} with ♥️ by </Text>
+            <Text>
+              {'</>'}
+              {' '}
+              with ♥️ by
+              {' '}
+            </Text>
             <TouchableOpacity onPress={onPressLink}>
               <Text
                 style={{
@@ -92,6 +99,16 @@ const AuthNavigator = () => (
     <StartStack.Screen
       name="MindBlow"
       component={MindBlow}
+      options={{ headerShown: false }}
+    />
+    <StartStack.Screen
+      name="HocComponent"
+      component={HocComponent}
+      options={{ headerShown: false }}
+    />
+    <StartStack.Screen
+      name="Shake"
+      component={Shake}
       options={{ headerShown: false }}
     />
   </StartStack.Navigator>

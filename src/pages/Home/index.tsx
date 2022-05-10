@@ -31,6 +31,14 @@ const AnimationList: IAnimationList[] = [
     name: 'MindBlow (Animated API)  💅 ',
     navigate: 'MindBlow',
   },
+  {
+    name: 'HocComponent (Animated API)  💅 ',
+    navigate: 'HocComponent',
+  },
+  {
+    name: 'Shake (Reanimated v2)  💅 ',
+    navigate: 'Shake',
+  },
 ];
 
 const Home = () => {

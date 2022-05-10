@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
+
 import * as S from './Background.styles';
 
 interface IBackground {
@@ -14,24 +15,22 @@ const Background = ({
   children,
   scrollView,
   barStyle,
-}: IBackground) => {
-  return (
-    <>
-      <StatusBar
-        barStyle={barStyle}
-        animated
-        translucent
-        backgroundColor={backgroundColor}
-      />
-      {scrollView ? (
-        <S.ScrollView backgroundColor={backgroundColor}>
-          {children}
-        </S.ScrollView>
+}: IBackground) => (
+  <>
+    <StatusBar
+      barStyle={barStyle}
+      animated
+      translucent
+      backgroundColor={backgroundColor}
+    />
+    {scrollView ? (
+      <S.ScrollView backgroundColor={backgroundColor}>
+        {children}
+      </S.ScrollView>
       ) : (
         <S.Container backgroundColor={backgroundColor}>{children}</S.Container>
       )}
-    </>
+  </>
   );
-};
 
 export default Background;

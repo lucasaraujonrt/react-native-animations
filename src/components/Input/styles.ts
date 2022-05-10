@@ -17,4 +17,5 @@ export const Input = styled.TextInput`
   width: 100%;
   border-color: ${({ showBorder }: IProps) =>
     showBorder ? ({ theme }) => theme.colors.primary : 'transparent'};
+  padding: 10px 0; 
 `;

@@ -6,4 +6,6 @@ export { default as Background } from './Background';
 export { default as TouchableOpacity } from './TouchableOpacity';
 export { default as Row } from './Grid/Row/Row';
 export { default as ImageBackground } from './Grid/ImageBackground';
+export { default as HyperComponent } from './hoc/HyperComponent';
+export { default as ShakeComponent } from './ShakeComponent';
 export { default as Col } from './Grid/Col/Col';

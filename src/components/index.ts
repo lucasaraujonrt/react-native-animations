@@ -8,4 +8,6 @@ export { default as Row } from './Grid/Row/Row';
 export { default as ImageBackground } from './Grid/ImageBackground';
 export { default as HyperComponent } from './hoc/HyperComponent';
 export { default as ShakeComponent } from './ShakeComponent';
+export { default as Cursor } from './Cursor';
+export { default as Label } from './Label';
 export { default as Col } from './Grid/Col/Col';

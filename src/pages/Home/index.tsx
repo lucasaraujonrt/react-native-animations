@@ -39,6 +39,10 @@ const AnimationList: IAnimationList[] = [
     name: 'Shake (Reanimated v2)  💅 ',
     navigate: 'Shake',
   },
+  {
+    name: 'Graph (Reanimated v2)  💅 ',
+    navigate: 'Graph',
+  },
 ];
 
 const Home = () => {

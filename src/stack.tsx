@@ -5,6 +5,7 @@ import { Row } from './components';
 import { links } from './config';
 import AnimatedCarousel from './pages/AnimatedCarousel';
 import Login from './pages/Auth/Login';
+import Graph from './pages/Graph';
 import HocComponent from './pages/HocComponent';
 import Home from './pages/Home';
 import Matrix from './pages/Matrix';
@@ -50,12 +51,7 @@ const AuthNavigator = () => (
         headerTitleAlign: 'center',
         headerTitle: () => (
           <Row>
-            <Text>
-              {'</>'}
-              {' '}
-              with ♥️ by
-              {' '}
-            </Text>
+            <Text>{'</>'} with ♥️ by </Text>
             <TouchableOpacity onPress={onPressLink}>
               <Text
                 style={{
@@ -111,6 +107,7 @@ const AuthNavigator = () => (
       component={Shake}
       options={{ headerShown: false }}
     />
+    <StartStack.Screen name="Graph" component={Graph} />
   </StartStack.Navigator>
 );
 

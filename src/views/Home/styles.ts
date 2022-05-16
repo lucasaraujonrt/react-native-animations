@@ -1,16 +1,25 @@
 import styled from 'styled-components/native';
 
-import Me from '@mobile/assets/svg/home/ic_me_hello.svg';
+import Arrow from '@mobile/assets/svg/home/ic-arrow-right.svg';
+import Me from '@mobile/assets/svg/home/ic-home-img.svg';
+import * as Window from '@mobile/services/dimensions';
+
+interface IProps {
+  direction?: 'row' | 'row-reverse';
+  directionText?: 'right' | 'left';
+  directionArrow?: 'right' | 'left';
+}
 
 export const WrapperImage = styled.View`
   width: 100%;
-  height: 50%;
   justify-content: center;
   align-items: center;
 `;
 
-export const MeIcon = styled(Me)`
-  left: 20px;
+export const MeIcon = styled(Me).attrs({
+  height: Window.heightScale(0.45),
+})`
+  top: ${Window.heightScale(0.1)}px;
 `;
 
 export const WrapperInformation = styled.View`
@@ -41,7 +50,7 @@ export const WorkText = styled.Text`
 export const WrapperSquares = styled.View`
   margin-top: 20px;
   flex-direction: row;
-  width: 80%;
+  width: 90%;
   justify-content: space-around;
   align-items: center;
   align-self: center;
@@ -50,17 +59,32 @@ export const WrapperSquares = styled.View`
 export const Squares = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7,
 })`
-  width: 125px;
-  height: 125px;
+  width: 160px;
+  height: 102px;
+  flex-direction: ${({ direction }: IProps) =>
+    direction ? 'row' : 'row-reverse'};
   background-color: ${({ theme }) => theme.colors.components};
   border-radius: 8px;
   justify-content: center;
   align-items: center;
 `;
 
+export const WrapperArrow = styled.View`
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background-color: ${({ theme }) => theme.colors.homePurple};
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ArrowIcon = styled(Arrow)`
+  ${({ directionArrow }: IProps) =>
+    `transform: rotate(${directionArrow === 'left' ? '-180deg' : '0deg'}`})
+`;
+
 export const SquareText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
   font-size: 22px;
-  text-align: center;
-  width: 60%;
+  text-align: ${({ directionText }: IProps) => directionText};
 `;

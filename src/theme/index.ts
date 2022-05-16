@@ -6,11 +6,12 @@ const theme: DefaultTheme = {
     background: '#fff',
   },
   colors: {
-    primary: '#0F0E17',
-    background: '#0F0E17',
+    primary: '#16161A',
+    background: '#16161A',
     text: '#FFFFFE',
-    components: '#FF8906',
-    paragraph: '#A7A9BE',
+    components: '#7F5AF0',
+    homePurple: '#9677F4',
+    paragraph: '#94A1B2',
   },
 };
 

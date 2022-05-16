@@ -47,7 +47,7 @@ const Home = () => {
       <S.WrapperSquares>
         <MotiView
           delay={2000}
-          from={{ opacity: 0, scale: 0.5, translateX: -30 }}
+          from={{ opacity: 0, scale: 0.5, translateX: -20 }}
           animate={{ opacity: 1, scale: 1, translateX: 0 }}
           transition={{
             type: 'spring',
@@ -57,15 +57,21 @@ const Home = () => {
             },
           }}
         >
-          <S.Squares onPress={() => navigateTo('AboutMe')}>
-            <S.SquareText>
+          <S.Squares
+            direction="row-reverse"
+            onPress={() => navigateTo('AboutMe')}
+          >
+            <S.WrapperArrow>
+              <S.ArrowIcon directionArrow="left" />
+            </S.WrapperArrow>
+            <S.SquareText directionText="right" style={{ width: '50%' }}>
               {i18n.t('VIEWS.HOME.BUTTONS.ABOUT_ME.TITLE')}
             </S.SquareText>
           </S.Squares>
         </MotiView>
         <MotiView
           delay={2000}
-          from={{ opacity: 0, scale: 0.5, translateX: 30 }}
+          from={{ opacity: 0, scale: 0.5, translateX: 20 }}
           animate={{ opacity: 1, scale: 1, translateX: 0 }}
           transition={{
             type: 'spring',
@@ -76,7 +82,10 @@ const Home = () => {
           }}
         >
           <S.Squares onPress={() => navigateTo('SandBox')}>
-            <S.SquareText style={{ width: '70%' }}>
+            <S.WrapperArrow>
+              <S.ArrowIcon directionArrow="right" />
+            </S.WrapperArrow>
+            <S.SquareText directionText="left" style={{ width: '50%' }}>
               {i18n.t('VIEWS.HOME.BUTTONS.SANDBOX.TITLE')}
             </S.SquareText>
           </S.Squares>

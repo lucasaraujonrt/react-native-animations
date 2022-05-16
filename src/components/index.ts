@@ -10,5 +10,8 @@ export { default as HyperComponent } from './hoc/HyperComponent';
 export { default as ShakeComponent } from './ShakeComponent';
 export { default as Cursor } from './Cursor';
 export { default as Label } from './Label';
+export { default as CarouselAboutMe } from './CarouselAboutMe';
+export { default as AboutMeInformation } from './AboutMeInformation';
+export { default as Header } from './Header';
 export { default as Typography } from './Typography';
 export { default as Col } from './Grid/Col/Col';

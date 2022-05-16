@@ -1,9 +1,12 @@
+import { MotiView } from 'moti';
 import React from 'react';
 import { FlatList, View, Text, TouchableOpacity } from 'react-native';
+import { Easing } from 'react-native-reanimated';
 
-import { Background } from '@mobile/components';
+import { Background, HyperComponent } from '@mobile/components';
 import useDimensions from '@mobile/hooks/useDimensions';
 import navigationService from '@mobile/services/navigation';
+import theme from '@mobile/theme';
 
 interface IAnimationList {
   name: string;
@@ -16,7 +19,7 @@ const AnimationList: IAnimationList[] = [
     navigate: 'PanGesture',
   },
   {
-    name: 'CI&T Calling (Moti)  💅 ',
+    name: 'Someone is Calling (Moti)  💅 ',
     navigate: 'PhoneCall',
   },
   {
@@ -24,20 +27,12 @@ const AnimationList: IAnimationList[] = [
     navigate: 'SquareStick',
   },
   {
-    name: 'Animated Carousel (Animated API)  💅 ',
+    name: 'Simple Carousel (Animated API)  💅 ',
     navigate: 'AnimatedCarousel',
   },
   {
     name: 'MindBlow (Animated API)  💅 ',
     navigate: 'MindBlow',
-  },
-  {
-    name: 'HocComponent (Animated API)  💅 ',
-    navigate: 'HocComponent',
-  },
-  {
-    name: 'Shake (Reanimated v2)  💅 ',
-    navigate: 'Shake',
   },
   {
     name: 'Graph (Reanimated v2)  💅 ',
@@ -47,34 +42,60 @@ const AnimationList: IAnimationList[] = [
 
 const Home = () => {
   const { width } = useDimensions();
+  const getDirection = (index: number) =>
+    index % 2 ? 'translateX' : 'translateY';
 
   return (
-    <Background barStyle="dark-content" backgroundColor="white">
+    <HyperComponent backgroundColor={theme?.colors?.background}>
       <FlatList
         data={AnimationList}
         style={{ flexGrow: 1 }}
         renderItem={({ item, index }) => (
-          <TouchableOpacity
-            onPress={() => navigationService.navigate(item.navigate)}
-            key={index.toString()}
+          <MotiView
+            delay={600 * index}
+            from={{
+              opacity: 0,
+              scale: 0.5,
+              [getDirection(index)]: -20,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              [getDirection(index)]: 0,
+            }}
+            transition={{
+              type: 'spring',
+              duration: 3500,
+              scale: {
+                delay: 50,
+              },
+              easing: Easing.out(Easing.bounce),
+            }}
           >
-            <View
-              style={{
-                width,
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: 20,
-                borderBottomWidth: AnimationList.length === index ? 0 : 0.2,
-              }}
+            <TouchableOpacity
+              onPress={() => navigationService.navigate(item.navigate)}
+              key={index.toString()}
             >
-              <Text style={{ color: 'black', fontWeight: '600' }}>
-                {item.name}
-              </Text>
-            </View>
-          </TouchableOpacity>
+              <View
+                style={{
+                  width,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  padding: 20,
+                  borderBottomWidth:
+                    AnimationList.length === index - 1 ? 0 : 0.2,
+                  borderBottomColor: theme.colors.text,
+                }}
+              >
+                <Text style={{ color: theme.colors.text, fontWeight: '600' }}>
+                  {item.name}
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </MotiView>
         )}
       />
-    </Background>
+    </HyperComponent>
   );
 };
 

@@ -24,4 +24,25 @@ export default {
       },
     },
   },
+
+  VIEWS: {
+    HOME: {
+      PATH: 'home',
+      CONTENT: {
+        HI: "Hi, I'm",
+        NAME: 'Lucas Araujo',
+        WORK: 'Mobile Developer',
+      },
+      BUTTONS: {
+        ABOUT_ME: {
+          PATH: 'about-me',
+          TITLE: 'About me',
+        },
+        SANDBOX: {
+          PATH: 'sandbox',
+          TITLE: 'My Sandbox',
+        },
+      },
+    },
+  },
 };

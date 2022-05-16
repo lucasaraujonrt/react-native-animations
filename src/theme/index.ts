@@ -6,9 +6,11 @@ const theme: DefaultTheme = {
     background: '#fff',
   },
   colors: {
-    primary: '#66519E',
-    background: '#fff',
-    text: '#000',
+    primary: '#0F0E17',
+    background: '#0F0E17',
+    text: '#FFFFFE',
+    components: '#FF8906',
+    paragraph: '#A7A9BE',
   },
 };
 

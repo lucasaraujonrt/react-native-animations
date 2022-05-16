@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, TouchableOpacity, Linking } from 'react-native';
 
+import { Home as HomeViews, AboutMe } from '@mobile/views';
+
 import { Row } from './components';
 import { links } from './config';
 import AnimatedCarousel from './pages/AnimatedCarousel';
@@ -42,31 +44,23 @@ const ContentNavigator = () => (
 
 const onPressLink = () => Linking.openURL(links.github);
 
-const AuthNavigator = () => (
+const ViewsNavigator = () => (
   <StartStack.Navigator>
     <StartStack.Screen
-      name="Home"
-      component={Home}
-      options={{
-        headerTitleAlign: 'center',
-        headerTitle: () => (
-          <Row>
-            <Text>{'</>'} with ♥️ by </Text>
-            <TouchableOpacity onPress={onPressLink}>
-              <Text
-                style={{
-                  textDecorationLine: 'underline',
-                  color: 'blue',
-                }}
-              >
-                @lucasaraujonrt
-              </Text>
-            </TouchableOpacity>
-          </Row>
-        ),
-      }}
+      name="home"
+      component={HomeViews}
+      options={{ headerShown: false }}
     />
-    <StartStack.Screen name="Login" component={Login} />
+    <StartStack.Screen
+      name="AboutMe"
+      component={AboutMe}
+      options={{ headerShown: false, animationTypeForReplace: 'push' }}
+    />
+    <StartStack.Screen
+      name="SandBox"
+      component={Home}
+      options={{ headerShown: false }}
+    />
     <StartStack.Screen
       name="PanGesture"
       component={PanGesture}
@@ -105,9 +99,21 @@ const AuthNavigator = () => (
     <StartStack.Screen
       name="Shake"
       component={Shake}
-      options={{ headerShown: false }}
+      options={{
+        headerShown: false,
+        animationTypeForReplace: 'push',
+        presentation: 'modal',
+        animationEnabled: true,
+      }}
     />
-    <StartStack.Screen name="Graph" component={Graph} />
+    <StartStack.Screen
+      name="Graph"
+      component={Graph}
+      options={{
+        headerShown: true,
+        animationEnabled: true,
+      }}
+    />
   </StartStack.Navigator>
 );
 
@@ -116,7 +122,7 @@ const Navigator = () => (
     initialRouteName=""
     screenOptions={{ headerShown: false }}
   >
-    <MainStack.Screen name="Start" component={AuthNavigator} />
+    <MainStack.Screen name="Views" component={ViewsNavigator} />
     <MainStack.Screen name="Content" component={ContentNavigator} />
   </MainStack.Navigator>
 );

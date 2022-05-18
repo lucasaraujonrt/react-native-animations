@@ -12,22 +12,36 @@ function clean() {
     printf "✅ Cleaning finished! \n"
 }
 
-function install_dependencies_m1() {
+function install_dependencies() {
     printf "👨‍💻 Installing dependencies.. \n"
     yarn
     cd ios
-    arch -x86_64 pod install
+    arch_name="$(uname -m)"
+    if [ "${arch_name}" = "x86_64" ]; then
+        if [ "$(sysctl -in sysctl.proc_translated)" = "1" ]; then
+            printf " Using arch -x86_64 to install... \n"
+            arch -x86_64 pod install;
+        else
+            echo "Normal pod install...";
+            pod install;
+        fi
+    elif [ "${arch_name}" = "arm64" ]; then
+        printf " Using arch -x86_64 to install... \n"
+        arch -x86_64 pod install;
+        else
+        echo "Unknown architecture: ${arch_name}"
+    fi
     printf "✅ All installed correctly"
 }
 
 function setup_environment() {
     clean
-    install_dependencies_m1
+    install_dependencies
 }
 
 case $COMMAND in
 clean) clean ;;
-install) install_dependencies_m1 ;;
+install) install_dependencies ;;
 setup) setup_environment ;;
 *) echo "❌ Command not found" ;;
 esac

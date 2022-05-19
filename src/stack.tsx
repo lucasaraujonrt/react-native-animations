@@ -1,12 +1,10 @@
 import React from 'react';
 import { Text, TouchableOpacity, Linking } from 'react-native';
 
-import { Home as HomeViews, AboutMe } from '@mobile/views';
+import { Home as HomeViews, AboutMe, Contact } from '@mobile/views';
 
-import { Row } from './components';
 import { links } from './config';
 import AnimatedCarousel from './pages/AnimatedCarousel';
-import Login from './pages/Auth/Login';
 import Graph from './pages/Graph';
 import HocComponent from './pages/HocComponent';
 import Home from './pages/Home';
@@ -112,6 +110,13 @@ const ViewsNavigator = () => (
       options={{
         headerShown: true,
         animationEnabled: true,
+      }}
+    />
+    <StartStack.Screen
+      name="Contact"
+      component={Contact}
+      options={{
+        headerShown: false,
       }}
     />
   </StartStack.Navigator>

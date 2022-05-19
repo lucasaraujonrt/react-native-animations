@@ -8,9 +8,11 @@ declare module 'styled-components' {
     };
     colors: {
       primary: string;
-      text: string;
       background: string;
+      card: string;
+      text: string;
       components: string;
+      homePurple: string;
       paragraph: string;
     };
   }

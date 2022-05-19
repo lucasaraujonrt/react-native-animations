@@ -10,7 +10,7 @@ interface IHeaderProps {
 }
 
 const Header = ({ title }: IHeaderProps) => (
-  <S.Container>
+  <S.Container onPress={navigationService.back}>
     <MotiView
       from={{
         opacity: 0,
@@ -25,7 +25,7 @@ const Header = ({ title }: IHeaderProps) => (
         flexDirection: 'row',
       }}
     >
-      <S.WrapperArrow onPress={navigationService.back}>
+      <S.WrapperArrow>
         <S.Arrow />
       </S.WrapperArrow>
       <S.Title>{title}</S.Title>

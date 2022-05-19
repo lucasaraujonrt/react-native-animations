@@ -13,4 +13,6 @@ export const WrapperMe = styled(MotiView)`
   margin-top: ${Window.heightScale(0.01)}px;
 `;
 
-export const IconMe = styled(Me)``;
+export const IconMe = styled(Me)`
+  left: 10px;
+`;

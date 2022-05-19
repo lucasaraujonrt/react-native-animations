@@ -2,7 +2,7 @@
   "name": "react-native-template-animations",
   "version": "0.0.8",
   "private": false,
-  "author": "lucasaraujoanimations",
+  "author": "lucasaraujonrt",
   "scripts": {
     "android": "yarn run android:clean && react-native run-android",
     "android:clean": "cd android && gradlew clean && cd ..",

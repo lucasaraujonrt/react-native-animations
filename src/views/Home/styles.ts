@@ -28,27 +28,27 @@ export const WrapperInformation = styled.View`
 `;
 
 export const WrapperTexts = styled.View`
-  margin-top: 40px;
+  margin-top: ${Window.heightScale(0.04)}px;
 `;
 
 export const FirstText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
-  font-size: 40px;
+  font-size: ${Window.fontScale(40)}px;
 `;
 
 export const SecondText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
-  font-size: 40px;
+  font-size: ${Window.fontScale(40)}px;
 `;
 
 export const WorkText = styled.Text`
   color: ${({ theme }) => theme.colors.paragraph};
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: ${Window.fontScale(18)}px;
+  margin-top: ${Window.heightScale(0.02)}px;
 `;
 
 export const WrapperSquares = styled.View`
-  margin-top: 20px;
+  margin-top: ${Window.heightScale(0.02)}px;
   flex-direction: row;
   width: 90%;
   justify-content: space-around;
@@ -59,8 +59,8 @@ export const WrapperSquares = styled.View`
 export const Squares = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7,
 })`
-  width: 160px;
-  height: 102px;
+  width: ${Window.widthScale(0.4)}px;
+  padding-vertical: ${Window.heightScale(0.04)}px;
   flex-direction: ${({ direction }: IProps) =>
     direction ? 'row' : 'row-reverse'};
   background-color: ${({ theme }) => theme.colors.components};
@@ -70,8 +70,8 @@ export const Squares = styled.TouchableOpacity.attrs({
 `;
 
 export const WrapperArrow = styled.View`
-  width: 40px;
-  height: 40px;
+  width: ${Window.widthScale(0.1)}px;
+  height: ${Window.widthScale(0.1)}px;
   border-radius: 100px;
   background-color: ${({ theme }) => theme.colors.homePurple};
   justify-content: center;
@@ -85,6 +85,6 @@ export const ArrowIcon = styled(Arrow)`
 
 export const SquareText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
-  font-size: 22px;
+  font-size: ${Window.fontScale(18)}px;
   text-align: ${({ directionText }: IProps) => directionText};
 `;

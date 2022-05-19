@@ -8,6 +8,7 @@ const theme: DefaultTheme = {
   colors: {
     primary: '#16161A',
     background: '#16161A',
+    card: '#2F2F36',
     text: '#FFFFFE',
     components: '#7F5AF0',
     homePurple: '#9677F4',

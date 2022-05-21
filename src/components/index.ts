@@ -14,6 +14,7 @@ export { default as CarouselAboutMe } from './CarouselAboutMe';
 export { default as AboutMeInformation } from './AboutMeInformation';
 export { default as Header } from './Header';
 export { default as Web } from './Web';
+export { default as Swiping } from './Swiper/Swiping';
 export { default as AnimationCard } from './AnimationCard';
 export { default as Typography } from './Typography';
 export { default as Col } from './Grid/Col/Col';

@@ -3,7 +3,7 @@ import { Linking } from 'react-native';
 
 import { Home as HomeViews, AboutMe, Contact } from '@mobile/views';
 
-import { Web } from './components';
+import { Web, Swiping } from './components';
 import { links } from './config';
 import AnimatedCarousel from './pages/AnimatedCarousel';
 import Graph from './pages/Graph';
@@ -14,6 +14,7 @@ import PanGesture from './pages/PanGesture';
 import PhoneCall from './pages/PhoneCall';
 import Shake from './pages/Shake';
 import SquareStick from './pages/SquareStick';
+import Tinder from './pages/Tinder';
 import TabNavigator from './routes/TabNavigator';
 import { createStack } from './services/navigation';
 
@@ -117,6 +118,13 @@ const ViewsNavigator = () => (
     <StartStack.Screen
       name="Web"
       component={Web}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <StartStack.Screen
+      name="Tinder"
+      component={Tinder}
       options={{
         headerShown: false,
       }}

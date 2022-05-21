@@ -70,7 +70,7 @@ const AnimationList: IAnimationList[] = [
     navigateTo: 'Tinder',
     type: 'reanimated',
     icon: <Tinder />,
-    disabled: true,
+    disabled: false,
   },
   {
     name: 'Bezier',

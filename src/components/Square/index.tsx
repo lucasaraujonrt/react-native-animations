@@ -10,6 +10,8 @@ import {
 } from 'react-native-redash';
 import Svg, { Path } from 'react-native-svg';
 
+import theme from '@mobile/theme';
+
 export const SIZE = 150;
 const H_FACTOR = 0.3;
 const V_FACTOR = 2.5;
@@ -46,13 +48,16 @@ const Square = ({ progress }: SquareProps) => {
 
     return {
       d: serialize(path),
-      fill: '#45A6E5',
+      fill: theme.colors.components,
     };
   });
 
   return (
     <Svg style={StyleSheet.absoluteFill}>
-      <AnimatedPath animatedProps={animatedProps} />
+      <AnimatedPath
+        animatedProps={animatedProps}
+        fill={theme.colors.components}
+      />
     </Svg>
   );
 };

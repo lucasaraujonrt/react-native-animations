@@ -14,6 +14,7 @@ import Animated, {
 
 import type { Path } from '@mobile/animation/helpers/SVG';
 import type { DataPoint } from '@mobile/components/Label';
+import theme from '@mobile/theme';
 
 const { width } = Dimensions.get('window');
 
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 15,
-    borderColor: '#367be2',
+    borderColor: theme.colors.homePurple,
     borderWidth: 4,
     backgroundColor: 'white',
   },

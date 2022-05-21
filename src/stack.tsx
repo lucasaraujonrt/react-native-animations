@@ -63,17 +63,17 @@ const ViewsNavigator = () => (
     <StartStack.Screen
       name="PanGesture"
       component={PanGesture}
-      options={{ headerTitle: 'PanGesture' }}
+      options={{ headerShown: false }}
     />
     <StartStack.Screen
       name="SquareStick"
       component={SquareStick}
-      options={{ headerTitle: 'SquareStick' }}
+      options={{ headerShown: false }}
     />
     <StartStack.Screen
       name="PhoneCall"
       component={PhoneCall}
-      options={{ headerTitle: 'CI&T Calling' }}
+      options={{ headerShown: false }}
     />
     <StartStack.Screen
       name="AnimatedCarousel"
@@ -91,21 +91,10 @@ const ViewsNavigator = () => (
       options={{ headerShown: false }}
     />
     <StartStack.Screen
-      name="Shake"
-      component={Shake}
-      options={{
-        headerShown: false,
-        animationTypeForReplace: 'push',
-        presentation: 'modal',
-        animationEnabled: true,
-      }}
-    />
-    <StartStack.Screen
       name="Graph"
       component={Graph}
       options={{
-        headerShown: true,
-        animationEnabled: true,
+        headerShown: false,
       }}
     />
     <StartStack.Screen

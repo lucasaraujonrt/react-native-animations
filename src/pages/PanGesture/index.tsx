@@ -10,9 +10,10 @@ import Animated, {
 } from 'react-native-reanimated';
 import { clamp, withBouncing } from 'react-native-redash';
 
-import { Background } from '@mobile/components';
+import { Background, Header, HyperComponent } from '@mobile/components';
 import { PanGestureConstants } from '@mobile/constants';
 import useDimensions from '@mobile/hooks/useDimensions';
+import theme from '@mobile/theme';
 
 const PanGesture: React.FC = () => {
   const { width, height } = useDimensions();
@@ -41,14 +42,14 @@ const PanGesture: React.FC = () => {
           velocity: velocityX,
         }),
         0,
-        boundX,
+        boundX
       );
       translateY.value = withBouncing(
         withDecay({
           velocity: velocityY,
         }),
         0,
-        boundY,
+        boundY
       );
     },
   });
@@ -61,14 +62,15 @@ const PanGesture: React.FC = () => {
   }));
 
   return (
-    <Background barStyle="dark-content" backgroundColor="white">
+    <HyperComponent backgroundColor={theme.colors.background}>
+      <Header title="Pan Gesture" />
       <PanGestureHandler {...{ onGestureEvent }}>
         <Animated.View {...{ style }}>
           <View
             style={{
               width: PanGestureConstants.CARD_WIDTH,
               height: PanGestureConstants.CARD_HEIGHT,
-              backgroundColor: '#FF5852',
+              backgroundColor: theme.colors.components,
               borderRadius: 30,
               justifyContent: 'center',
               alignItems: 'center',
@@ -78,7 +80,7 @@ const PanGesture: React.FC = () => {
           </View>
         </Animated.View>
       </PanGestureHandler>
-    </Background>
+    </HyperComponent>
   );
 };
 

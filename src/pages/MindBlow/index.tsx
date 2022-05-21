@@ -5,10 +5,12 @@ import {
   StatusBar,
   TouchableOpacity,
   Animated,
-  Image,
 } from 'react-native';
 
+import Me from '@mobile/assets/svg/aboutMe/ic_me.svg';
+import { Header, HyperComponent } from '@mobile/components';
 import { MindBlowConstants } from '@mobile/constants';
+import theme from '@mobile/theme';
 
 const Circle = ({ onPress, animatedValue }: any) => {
   const inputRange = [0, 0.001, 0.5, 0.501, 1];
@@ -99,10 +101,7 @@ const MindBlow: React.FC = () => {
     <View style={styles.container}>
       <StatusBar hidden />
       <Circle onPress={onPress} animatedValue={animatedValue} />
-      <Image
-        style={styles.logo}
-        source={require('@mobile/assets/img/ciandt_logo.png')}
-      />
+      <Me style={styles.logo} />
     </View>
   );
 };
@@ -115,6 +114,7 @@ const styles = StyleSheet.create({
     width: 350,
     height: 250,
     alignSelf: 'center',
+    top: 100,
   },
   circleContainer: {
     flex: 1,

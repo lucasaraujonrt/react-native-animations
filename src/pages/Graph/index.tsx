@@ -10,7 +10,8 @@ import {
 import Svg, { Path, Defs, Stop, LinearGradient } from 'react-native-svg';
 
 import { getPointAtLength, parsePath } from '@mobile/animation/helpers/SVG';
-import { Cursor, Label } from '@mobile/components';
+import { Cursor, Header, HyperComponent, Label } from '@mobile/components';
+import theme from '@mobile/theme';
 
 const { width } = Dimensions.get('window');
 const height = width;
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: theme.colors.background,
   },
 });
 
@@ -77,19 +78,22 @@ const Graph = () => {
 
   return (
     <View style={styles.container}>
+      <View style={[StyleSheet.absoluteFillObject, { top: 50 }]}>
+        <Header title="Graph" />
+      </View>
       <Label {...{ data, point }} />
       <View>
         <Svg {...{ width, height }}>
           <Defs>
             <LinearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="gradient">
-              <Stop stopColor="#CDE3F8" offset="0%" />
-              <Stop stopColor="#eef6fd" offset="80%" />
-              <Stop stopColor="#FEFFFF" offset="100%" />
+              <Stop stopColor={theme.colors.components} offset="0%" />
+              <Stop stopColor={theme.colors.components} offset="80%" />
+              <Stop stopColor={theme.colors.components} offset="100%" />
             </LinearGradient>
           </Defs>
           <Path
             fill="transparent"
-            stroke="#367be2"
+            stroke={theme.colors.components}
             strokeWidth={5}
             {...{ d }}
           />

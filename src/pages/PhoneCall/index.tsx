@@ -4,9 +4,8 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Easing } from 'react-native-reanimated';
 import Feather from 'react-native-vector-icons/Feather';
 
-import { HyperComponent } from '@mobile/components';
+import { Header, HyperComponent } from '@mobile/components';
 import { PhoneCall as CNST } from '@mobile/constants';
-import Toaster from '@mobile/services/toaster';
 import theme from '@mobile/theme';
 
 const styles = StyleSheet.create({
@@ -14,7 +13,7 @@ const styles = StyleSheet.create({
     width: CNST.SIZE,
     height: CNST.SIZE,
     borderRadius: CNST.SIZE,
-    backgroundColor: '#FF8906',
+    backgroundColor: theme.colors.components,
   },
   center: {
     justifyContent: 'center',
@@ -30,13 +29,15 @@ const PhoneCall: React.FC = () => {
       backgroundColor={theme.colors.primary}
       style={[
         {
-          backgroundColor: 'white',
           justifyContent: 'center',
           alignItems: 'center',
         },
         StyleSheet.absoluteFillObject,
       ]}
     >
+      <View style={[StyleSheet.absoluteFillObject, { top: 40 }]}>
+        <Header title="Someone is calling" />
+      </View>
       <TouchableOpacity
         activeOpacity={0.7}
         style={[styles.dot, styles.center]}

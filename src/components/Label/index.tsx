@@ -3,16 +3,20 @@ import { View, StyleSheet } from 'react-native';
 import Animated, { useDerivedValue } from 'react-native-reanimated';
 import { ReText, round } from 'react-native-redash';
 
+import theme from '@mobile/theme';
+
 const styles = StyleSheet.create({
   date: {
     fontSize: 22,
     lineHeight: 26,
     textAlign: 'center',
+    color: theme.colors.text,
   },
   price: {
     fontSize: 28,
     lineHeight: 34,
     textAlign: 'center',
+    color: theme.colors.text,
   },
 });
 

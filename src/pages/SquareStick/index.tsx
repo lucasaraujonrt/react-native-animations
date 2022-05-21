@@ -15,15 +15,16 @@ import Animated, {
 } from 'react-native-reanimated';
 import { snapPoint } from 'react-native-redash';
 
-import { Square } from '@mobile/components';
+import { Header, HyperComponent, Square } from '@mobile/components';
 import { SIZE, MAX_HEIGHT } from '@mobile/components/Square';
+import theme from '@mobile/theme';
 
 const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     left: (width - SIZE) / 2,
-    top: 0,
+    top: 140,
     bottom: 0,
     width: SIZE,
   },
@@ -72,13 +73,16 @@ const SquareStick = () => {
   }));
 
   return (
-    <Animated.View style={[styles.container, container]}>
-      <PanGestureHandler onGestureEvent={onGestureEvent}>
-        <Animated.View style={[StyleSheet.absoluteFill, style]}>
-          <Square progress={progress} />
-        </Animated.View>
-      </PanGestureHandler>
-    </Animated.View>
+    <HyperComponent backgroundColor={theme.colors.background}>
+      <Header title="Square" />
+      <Animated.View style={[styles.container, container]}>
+        <PanGestureHandler onGestureEvent={onGestureEvent}>
+          <Animated.View style={[StyleSheet.absoluteFill, style]}>
+            <Square progress={progress} />
+          </Animated.View>
+        </PanGestureHandler>
+      </Animated.View>
+    </HyperComponent>
   );
 };
 

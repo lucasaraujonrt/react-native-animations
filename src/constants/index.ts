@@ -1,5 +1,7 @@
 import { Dimensions } from 'react-native';
 
+import theme from '@mobile/theme';
+
 const { width } = Dimensions.get('window');
 const ratio = 228 / 362;
 export const CARD_WIDTH = width * 0.8;
@@ -26,8 +28,8 @@ export const PhoneCall = {
 
 export const MindBlowConstants = {
   CIRCLE_SIZE: 100,
-  RED: '#ED1941',
-  BLUE: '#20BEC6',
+  RED: theme.colors.components,
+  BLUE: theme.colors.background,
 };
 
 export const CenterStyle = {

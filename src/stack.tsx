@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text, TouchableOpacity, Linking } from 'react-native';
+import { Linking } from 'react-native';
 
 import { Home as HomeViews, AboutMe, Contact } from '@mobile/views';
 
+import { Web } from './components';
 import { links } from './config';
 import AnimatedCarousel from './pages/AnimatedCarousel';
 import Graph from './pages/Graph';
-import HocComponent from './pages/HocComponent';
 import Home from './pages/Home';
 import Matrix from './pages/Matrix';
 import MindBlow from './pages/MindBlow';
@@ -90,11 +90,6 @@ const ViewsNavigator = () => (
       options={{ headerShown: false }}
     />
     <StartStack.Screen
-      name="HocComponent"
-      component={HocComponent}
-      options={{ headerShown: false }}
-    />
-    <StartStack.Screen
       name="Shake"
       component={Shake}
       options={{
@@ -115,6 +110,13 @@ const ViewsNavigator = () => (
     <StartStack.Screen
       name="Contact"
       component={Contact}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <StartStack.Screen
+      name="Web"
+      component={Web}
       options={{
         headerShown: false,
       }}

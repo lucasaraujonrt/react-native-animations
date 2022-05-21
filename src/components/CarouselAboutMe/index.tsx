@@ -1,6 +1,5 @@
 import { MotiView } from 'moti';
 import React from 'react';
-import { FlatList, View } from 'react-native';
 
 import navigationService from '@mobile/services/navigation';
 
@@ -22,14 +21,14 @@ const CarouselAboutMe = ({ data }: ICarouselAboutMeProps) => (
   <S.Map>
     {data.map((item, index) => (
       <MotiView
-        delay={1200 * index}
+        delay={(1200 * index) / 2}
         from={{
           opacity: 0,
-          translateX: -20,
+          translateY: -20,
         }}
         animate={{
           opacity: 1,
-          translateX: 0,
+          translateY: 0,
         }}
       >
         <S.Container

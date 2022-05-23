@@ -99,7 +99,7 @@ const MindBlow: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar hidden />
+      <StatusBar translucent />
       <Circle onPress={onPress} animatedValue={animatedValue} />
       <Me style={styles.logo} />
     </View>

@@ -1,10 +1,8 @@
 import React from 'react';
-import { Linking } from 'react-native';
 
 import { Home as HomeViews, AboutMe, Contact } from '@mobile/views';
 
-import { Web, Swiping } from './components';
-import { links } from './config';
+import { Web } from './components';
 import AnimatedCarousel from './pages/AnimatedCarousel';
 import Graph from './pages/Graph';
 import Home from './pages/Home';
@@ -12,7 +10,6 @@ import Matrix from './pages/Matrix';
 import MindBlow from './pages/MindBlow';
 import PanGesture from './pages/PanGesture';
 import PhoneCall from './pages/PhoneCall';
-import Shake from './pages/Shake';
 import SquareStick from './pages/SquareStick';
 import Tinder from './pages/Tinder';
 import TabNavigator from './routes/TabNavigator';
@@ -41,10 +38,8 @@ const ContentNavigator = () => (
   </ContentStack.Navigator>
 );
 
-const onPressLink = () => Linking.openURL(links.github);
-
 const ViewsNavigator = () => (
-  <StartStack.Navigator>
+  <StartStack.Navigator screenOptions={{}}>
     <StartStack.Screen
       name="home"
       component={HomeViews}
@@ -53,7 +48,9 @@ const ViewsNavigator = () => (
     <StartStack.Screen
       name="AboutMe"
       component={AboutMe}
-      options={{ headerShown: false, animationTypeForReplace: 'push' }}
+      options={{
+        headerShown: false,
+      }}
     />
     <StartStack.Screen
       name="SandBox"

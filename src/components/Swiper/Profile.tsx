@@ -4,7 +4,7 @@ import Animated, {
   Extrapolate,
   interpolate,
   useAnimatedStyle,
-  useSharedValue,
+  useDerivedValue,
 } from 'react-native-reanimated';
 
 export interface ProfileModel {
@@ -73,42 +73,38 @@ interface CardProps {
   scale: Animated.SharedValue<number>;
 }
 
-const Profile = ({ profile, translateX, translateY, scale }: CardProps) => {
-  const style = useAnimatedStyle(() => ({
+const Profile = ({
+  profile,
+  translateX,
+  translateY,
+  scale,
+  onTop,
+}: CardProps) => {
+  const x = useDerivedValue(() => (onTop ? translateX.value : 0));
+  const container = useAnimatedStyle(() => ({
     transform: [
       { translateX: translateX.value },
       { translateY: translateY.value },
       {
-        rotate: interpolate(
-          translateX.value,
+        rotate: `${interpolate(
+          x.value,
           [-width / 2, 0, width / 2],
           [α, 0, -α],
           Extrapolate.CLAMP
-        ),
+        )}rad`,
       },
-      { scale: scale.value },
+      { scale: onTop ? 1 : scale.value },
     ],
   }));
-
-  const like = useAnimatedStyle(() => ({
-    opacity: interpolate(
-      translateX.value,
-      [0, width / 4],
-      [0, 1],
-      Extrapolate.CLAMP
-    ),
-  }));
   const dislike = useAnimatedStyle(() => ({
-    opacity: interpolate(
-      translateX.value,
-      [-width / 2, 0],
-      [1, 0],
-      Extrapolate.CLAMP
-    ),
+    opacity: interpolate(x.value, [-width / 4, 0], [1, 0]),
+  }));
+  const like = useAnimatedStyle(() => ({
+    opacity: interpolate(x.value, [0, width / 4], [0, 1], Extrapolate.CLAMP),
   }));
 
   return (
-    <Animated.View style={[StyleSheet.absoluteFill, style]}>
+    <Animated.View style={[StyleSheet.absoluteFill, container]}>
       <Image style={styles.image} source={profile.profile} />
       <View style={styles.overlay}>
         <View style={styles.header}>

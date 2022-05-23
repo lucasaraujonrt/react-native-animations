@@ -52,18 +52,16 @@ interface ProfilesProps {
 }
 
 const Profiles = ({ profiles: defaultProfiles }: ProfilesProps) => {
-  const [profiles, setProfiles] = useState(defaultProfiles);
-  const scale = useSharedValue(1);
   const topCard = useRef<Swiper>(null);
+  const scale = useSharedValue(0);
+  const [profiles, setProfiles] = useState(defaultProfiles);
   const onSwipe = useCallback(() => {
     setProfiles(profiles.slice(0, profiles.length - 1));
   }, [profiles]);
 
   return (
     <HyperComponent backgroundColor={theme.colors.background}>
-      <View style={styles.header}>
-        <Header title="Tinder" />
-      </View>
+      <Header title="Tinder" />
       <View style={styles.cards}>
         {profiles.map((profile, index) => {
           const onTop = index === profiles.length - 1;
@@ -72,9 +70,9 @@ const Profiles = ({ profiles: defaultProfiles }: ProfilesProps) => {
           return (
             <Swipeable
               ref={ref}
-              scale={scale}
               key={profile.id}
               profile={profile}
+              scale={scale}
               onSwipe={onSwipe}
               onTop={onTop}
             />
@@ -84,13 +82,17 @@ const Profiles = ({ profiles: defaultProfiles }: ProfilesProps) => {
       <View style={styles.footer}>
         <RectButton
           style={styles.circle}
-          onPress={() => topCard.current?.swipeLeft()}
+          onPress={() => {
+            topCard.current?.swipeLeft();
+          }}
         >
           <Icon name="x" size={32} color="#ec5288" />
         </RectButton>
         <RectButton
           style={styles.circle}
-          onPress={() => topCard.current?.swipeRight()}
+          onPress={() => {
+            topCard.current?.swipeRight();
+          }}
         >
           <Icon name="heart" size={32} color="#6ee3b4" />
         </RectButton>

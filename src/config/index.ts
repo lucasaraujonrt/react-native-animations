@@ -29,4 +29,8 @@ export const contact = {
     title: 'Site',
     link: 'https://lucasaraujonrt.github.io/',
   },
+  myLove: {
+    title: 'Linkedin',
+    link: 'https://www.linkedin.com/in/juliapeixotopereira/',
+  },
 };

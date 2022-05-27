@@ -47,7 +47,7 @@ const PhoneCall: React.FC = () => {
       >
         {call && (
           <>
-            {[...Array(3).keys()].map((index) => (
+            {[...Array(4).keys()].map((index) => (
               <MotiView
                 from={{ opacity: 0.5, scale: 1 }}
                 animate={{ opacity: 0, scale: 4 }}

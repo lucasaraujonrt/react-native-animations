@@ -1,7 +1,9 @@
+import { RectButton } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
 import IconMe from '@mobile/assets/svg/components/contact/ic_me.svg';
 import * as Window from '@mobile/services/dimensions';
+import theme from '@mobile/theme';
 
 export const Container = styled.View`
   justify-content: center;

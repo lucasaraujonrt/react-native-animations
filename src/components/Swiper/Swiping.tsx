@@ -6,27 +6,27 @@ import Profiles from './Profiles';
 export const profiles: ProfileModel[] = [
   {
     id: '1',
-    name: 'Caroline',
+    name: 'A',
     age: 24,
-    profile: require('./assets/1.jpg'),
+    profile: require('../../animation/Cards/assets/horizontal/horizontal_1.png'),
   },
   {
     id: '2',
-    name: 'Jack',
+    name: 'Joker',
     age: 30,
-    profile: require('./assets/2.jpg'),
+    profile: require('../../animation/Cards/assets/horizontal/horizontal_2.png'),
   },
   {
     id: '3',
-    name: 'Anet',
+    name: 'Queen',
     age: 21,
-    profile: require('./assets/3.jpg'),
+    profile: require('../../animation/Cards/assets/horizontal/horizontal_3.png'),
   },
   {
     id: '4',
-    name: 'John',
+    name: 'King',
     age: 28,
-    profile: require('./assets/4.jpg'),
+    profile: require('../../animation/Cards/assets/horizontal/horizontal_4.png'),
   },
 ];
 

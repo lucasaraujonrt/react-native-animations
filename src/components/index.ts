@@ -17,4 +17,6 @@ export { default as Web } from './Web';
 export { default as Swiping } from './Swiper/Swiping';
 export { default as AnimationCard } from './AnimationCard';
 export { default as Typography } from './Typography';
+export { default as ExperienceCard } from './ExperienceCard';
+export { default as AnimationList } from './AnimationList';
 export { default as Col } from './Grid/Col/Col';

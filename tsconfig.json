@@ -1,4 +1,5 @@
 {
+  "parser": "@typescript-eslint/parser",
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",

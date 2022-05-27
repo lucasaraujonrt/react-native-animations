@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Home as HomeViews, AboutMe, Contact } from '@mobile/views';
+import { Home as HomeViews, AboutMe, Contact, Experience } from '@mobile/views';
 
 import { Web } from './components';
 import AnimatedCarousel from './pages/AnimatedCarousel';
+import Drag from './pages/Drag';
 import Graph from './pages/Graph';
 import Home from './pages/Home';
 import Matrix from './pages/Matrix';
@@ -12,6 +13,7 @@ import PanGesture from './pages/PanGesture';
 import PhoneCall from './pages/PhoneCall';
 import SquareStick from './pages/SquareStick';
 import Tinder from './pages/Tinder';
+import Trigonometry from './pages/Trigonometry';
 import TabNavigator from './routes/TabNavigator';
 import { createStack } from './services/navigation';
 
@@ -111,6 +113,27 @@ const ViewsNavigator = () => (
     <StartStack.Screen
       name="Tinder"
       component={Tinder}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <StartStack.Screen
+      name="Trigonometry"
+      component={Trigonometry}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <StartStack.Screen
+      name="Drag"
+      component={Drag}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <StartStack.Screen
+      name="Experience"
+      component={Experience}
       options={{
         headerShown: false,
       }}

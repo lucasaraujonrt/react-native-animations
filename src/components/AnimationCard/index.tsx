@@ -28,9 +28,11 @@ const AnimationCard = ({
         <S.Text>{name}</S.Text>
       </S.WrapperText>
     </S.Wrapper>
-    <S.WrapperType>
-      <S.Type>{type}</S.Type>
-    </S.WrapperType>
+    <S.SecondWrapper>
+      <S.WrapperType>
+        <S.Type>{type}</S.Type>
+      </S.WrapperType>
+    </S.SecondWrapper>
   </S.Container>
 );
 

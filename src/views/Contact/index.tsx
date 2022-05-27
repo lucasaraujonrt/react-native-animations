@@ -174,7 +174,7 @@ const Contact = () => {
           }}
         >
           <TextFloat>Designed by</TextFloat>
-          <Pressable onPress={() => Linking.openURL(links.myLove)}>
+          <Pressable onPress={() => navigateToWeb(contact.myLove)}>
             <MyLove>Júlia Peixoto</MyLove>
           </Pressable>
         </MotiView>

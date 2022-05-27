@@ -18,10 +18,10 @@ const height = width;
 const data: Array<[number, number]> = [
   { x: new Date(2022, 5, 1), y: 4371 },
   { x: new Date(2022, 5, 2), y: 6198 },
-  { x: new Date(2022, 5, 3), y: 5310 },
-  { x: new Date(2022, 5, 4), y: 7188 },
-  { x: new Date(2022, 5, 5), y: 8677 },
-  { x: new Date(2022, 5, 6), y: 5012 },
+  { x: new Date(2022, 5, 3), y: 3310 },
+  { x: new Date(2022, 5, 4), y: 8188 },
+  { x: new Date(2022, 5, 5), y: 9677 },
+  { x: new Date(2022, 5, 6), y: 6012 },
 ].map((p) => [p.x.getTime(), p.y]);
 
 const domain = {

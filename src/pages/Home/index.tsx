@@ -1,4 +1,3 @@
-import { MotiView } from 'moti';
 import React from 'react';
 import { FlatList } from 'react-native';
 import { Easing } from 'react-native-reanimated';
@@ -11,7 +10,12 @@ import Mind from '@mobile/assets/svg/components/sandbox/ic_mind.svg';
 import Pan from '@mobile/assets/svg/components/sandbox/ic_pan.svg';
 import Phone from '@mobile/assets/svg/components/sandbox/ic_phone.svg';
 import Tinder from '@mobile/assets/svg/components/sandbox/ic_tinder.svg';
-import { AnimationCard, Header, HyperComponent } from '@mobile/components';
+import {
+  AnimationList as List,
+  AnimationCard,
+  Header,
+  HyperComponent,
+} from '@mobile/components';
 import theme from '@mobile/theme';
 
 interface IAnimationList {
@@ -73,25 +77,31 @@ const AnimationList: IAnimationList[] = [
     disabled: false,
   },
   {
+    name: 'Drag',
+    navigateTo: 'Drag',
+    type: 'reanimated',
+    icon: <Drag />,
+    disabled: false,
+  },
+  {
+    name: 'Trigonometry',
+    navigateTo: 'Trigonometry',
+    type: 'reanimated',
+    icon: <Bezier />,
+    disabled: true,
+  },
+
+  {
     name: 'Bezier',
     navigateTo: 'Bezier',
     type: 'reanimated',
     icon: <Bezier />,
     disabled: true,
   },
-  {
-    name: 'Drag',
-    navigateTo: 'Drag',
-    type: 'reanimated',
-    icon: <Drag />,
-    disabled: true,
-  },
 ];
 
 const Home = () => {
   const title = 'Sandbox';
-  const getDirection = (index: number) =>
-    index % 2 ? 'translateX' : 'translateY';
 
   return (
     <HyperComponent backgroundColor={theme?.colors?.background}>
@@ -99,33 +109,11 @@ const Home = () => {
       <FlatList
         data={AnimationList}
         showsVerticalScrollIndicator={false}
-        style={{ flexGrow: 1 }}
+        keyExtractor={(_, index) => index.toString()}
         renderItem={({ item, index }) => (
-          <>
-            <MotiView
-              delay={500 * index}
-              from={{
-                opacity: 0,
-                scale: 0.5,
-                [getDirection(index)]: -20,
-              }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                [getDirection(index)]: 0,
-              }}
-              transition={{
-                type: 'spring',
-                duration: 3500,
-                scale: {
-                  delay: 50,
-                },
-                easing: Easing.out(Easing.bounce),
-              }}
-            >
-              <AnimationCard {...item} />
-            </MotiView>
-          </>
+          <List {...{ index }}>
+            <AnimationCard {...item} />
+          </List>
         )}
       />
     </HyperComponent>

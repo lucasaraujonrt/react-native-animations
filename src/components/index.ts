@@ -19,4 +19,5 @@ export { default as AnimationCard } from './AnimationCard';
 export { default as Typography } from './Typography';
 export { default as ExperienceCard } from './ExperienceCard';
 export { default as AnimationList } from './AnimationList';
+export { default as ControlPoint } from './ControlPoint';
 export { default as Col } from './Grid/Col/Col';

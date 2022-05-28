@@ -4,6 +4,7 @@ import { Home as HomeViews, AboutMe, Contact, Experience } from '@mobile/views';
 
 import { Web } from './components';
 import AnimatedCarousel from './pages/AnimatedCarousel';
+import BezierCurves from './pages/Bezier';
 import Drag from './pages/Drag';
 import Graph from './pages/Graph';
 import Home from './pages/Home';
@@ -127,6 +128,13 @@ const ViewsNavigator = () => (
     <StartStack.Screen
       name="Drag"
       component={Drag}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <StartStack.Screen
+      name="BezierCurves"
+      component={BezierCurves}
       options={{
         headerShown: false,
       }}

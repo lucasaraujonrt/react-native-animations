@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Animated,
   StatusBar,
+  Image,
 } from 'react-native';
 import {
   State,
@@ -12,7 +13,25 @@ import {
   GestureEvent,
 } from 'react-native-gesture-handler';
 
-import Mock from '@mobile/mock/animatedImageCarousel';
+import image1 from '@mobile/animation/Cards/assets/horizontal/horizontal_1.png';
+import image2 from '@mobile/animation/Cards/assets/horizontal/horizontal_2.png';
+import image3 from '@mobile/animation/Cards/assets/horizontal/horizontal_3.png';
+import image4 from '@mobile/animation/Cards/assets/horizontal/horizontal_4.png';
+
+const mock = [
+  {
+    image: Image.resolveAssetSource(image1).uri,
+  },
+  {
+    image: Image.resolveAssetSource(image2).uri,
+  },
+  {
+    image: Image.resolveAssetSource(image3).uri,
+  },
+  {
+    image: Image.resolveAssetSource(image4).uri,
+  },
+];
 
 const AnimatedCarousel = () => {
   const { width } = Dimensions.get('window');
@@ -46,7 +65,7 @@ const AnimatedCarousel = () => {
       <StatusBar hidden />
       <View style={{ flex: 1, backgroundColor: '#000' }}>
         <View style={StyleSheet.absoluteFillObject}>
-          {Mock.data.map((item, index) => {
+          {mock.map((item, index) => {
             const inputRange = [
               (index - 1) * width,
               index * width,
@@ -62,14 +81,14 @@ const AnimatedCarousel = () => {
               <Animated.Image
                 key={`image-${index.toString()}`}
                 style={[StyleSheet.absoluteFillObject, { opacity }]}
-                source={{ uri: item }}
+                source={{ uri: item.image }}
                 blurRadius={50}
               />
             );
           })}
         </View>
         <Animated.FlatList
-          data={Mock.data}
+          data={mock}
           horizontal
           pagingEnabled
           pinchGestureEnabled={false}
@@ -93,7 +112,7 @@ const AnimatedCarousel = () => {
                 onHandlerStateChange={onPinchStateChange}
               >
                 <Animated.Image
-                  source={{ uri: item }}
+                  source={{ uri: item.image }}
                   style={{
                     width: imageW,
                     height: imageH,

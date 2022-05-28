@@ -1,6 +1,5 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { Easing } from 'react-native-reanimated';
 
 import Bezier from '@mobile/assets/svg/components/sandbox/ic_bezier.svg';
 import Cubic from '@mobile/assets/svg/components/sandbox/ic_cubic.svg';
@@ -84,16 +83,15 @@ const AnimationList: IAnimationList[] = [
     disabled: false,
   },
   {
-    name: 'Trigonometry',
-    navigateTo: 'Trigonometry',
+    name: 'Bezier',
+    navigateTo: 'BezierCurves',
     type: 'reanimated',
     icon: <Bezier />,
-    disabled: true,
+    disabled: false,
   },
-
   {
-    name: 'Bezier',
-    navigateTo: 'Bezier',
+    name: 'Trigonometry',
+    navigateTo: 'Trigonometry',
     type: 'reanimated',
     icon: <Bezier />,
     disabled: true,

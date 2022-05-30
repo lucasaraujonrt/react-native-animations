@@ -33,18 +33,21 @@ export const WrapperTexts = styled.View`
 
 export const FirstText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
-  font-size: ${Window.fontScale(40)}px;
+  font-size: ${Window.fontScale(32)}px;
+  font-family: ${({ theme }) => theme.fonts.regular};
 `;
 
 export const SecondText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
   font-size: ${Window.fontScale(40)}px;
+  font-family: ${({ theme }) => theme.fonts.semiBold};
 `;
 
 export const WorkText = styled.Text`
   color: ${({ theme }) => theme.colors.paragraph};
-  font-size: ${Window.fontScale(18)}px;
-  margin-top: ${Window.heightScale(0.02)}px;
+  font-size: ${Window.fontScale(20)}px;
+  margin-top: ${Window.heightScale(0.01)}px;
+  font-family: ${({ theme }) => theme.fonts.regular};
 `;
 
 export const WrapperSquares = styled.View`
@@ -87,4 +90,5 @@ export const SquareText = styled.Text`
   color: ${({ theme }) => theme.colors.text};
   font-size: ${Window.fontScale(18)}px;
   text-align: ${({ directionText }: IProps) => directionText};
+  font-family: ${({ theme }) => theme.fonts.semiBold};
 `;

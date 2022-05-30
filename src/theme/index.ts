@@ -14,6 +14,13 @@ const theme: DefaultTheme = {
     homePurple: '#9677F4',
     paragraph: '#94A1B2',
   },
+  fonts: {
+    regular: 'Nunito-Regular',
+    medium: 'Nunito-Medium',
+    semiBold: 'Nunito-SemiBold',
+    bold: 'Nunito-Bold',
+    light: 'Nunito-Light',
+  },
 };
 
 export default theme;

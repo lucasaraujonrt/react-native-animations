@@ -16,11 +16,13 @@ export const WrapperRow = styled.View`
 
 export const Project = styled.Text`
   color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.fonts.semiBold};
   font-size: 16px;
 `;
 
 export const Date = styled.Text`
   color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.fonts.semiBold};
   font-size: 16px;
   margin-top: 8px;
 `;
@@ -38,6 +40,7 @@ export const WrapperType = styled.View`
 
 export const Type = styled.Text`
   color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.fonts.semiBold};
   font-size: 12px;
   padding: 1% 2%;
 `;

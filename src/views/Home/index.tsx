@@ -85,7 +85,7 @@ const Home = () => {
             <S.WrapperArrow>
               <S.ArrowIcon directionArrow="right" />
             </S.WrapperArrow>
-            <S.SquareText directionText="left" style={{ width: '50%' }}>
+            <S.SquareText directionText="left" style={{ width: '60%' }}>
               {i18n.t('VIEWS.HOME.BUTTONS.SANDBOX.TITLE')}
             </S.SquareText>
           </S.Squares>

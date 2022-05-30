@@ -23,4 +23,5 @@ export const Arrow = styled(Icon)``;
 export const Title = styled.Text`
   font-size: ${Window.fontScale(20)}px;
   color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.fonts.semiBold};
 `;

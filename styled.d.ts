@@ -15,5 +15,12 @@ declare module 'styled-components' {
       homePurple: string;
       paragraph: string;
     };
+    fonts: {
+      regular: string;
+      medium: string;
+      semiBold: string;
+      bold: string;
+      light: string;
+    };
   }
 }

@@ -41,6 +41,7 @@ export const WrapperText = styled.View`
 export const Text = styled.Text`
   color: ${({ theme }) => theme.colors.text};
   font-size: ${Window.fontScale(16)}px;
+  font-family: ${({ theme }) => theme.fonts.semiBold};
 `;
 
 export const WrapperType = styled.View`
@@ -49,6 +50,7 @@ export const WrapperType = styled.View`
   align-items: center;
   padding: ${Window.widthScale(0.01)}px;
   border-radius: 8px;
+  font-family: ${({ theme }) => theme.fonts.semiBold};
 `;
 
 export const SecondWrapper = styled.View`

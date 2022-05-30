@@ -1,9 +1,8 @@
 import { MotiView } from 'moti';
 import React from 'react';
-import { SectionList, Text, View } from 'react-native';
+import { SectionList } from 'react-native';
 import { Easing } from 'react-native-reanimated';
 
-import { getDirection } from '@mobile/animation/helpers/directions';
 import {
   AnimationList,
   ExperienceCard,

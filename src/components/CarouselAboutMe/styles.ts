@@ -27,4 +27,5 @@ export const Text = styled.Text`
   color: ${({ theme }) => theme.colors.text};
   font-size: ${Window.fontScale(16)}px;
   margin-top: 12px;
+  font-family: ${({ theme }) => theme.fonts.semiBold};
 `;

@@ -12,6 +12,7 @@ import Matrix from './pages/Matrix';
 import MindBlow from './pages/MindBlow';
 import PanGesture from './pages/PanGesture';
 import PhoneCall from './pages/PhoneCall';
+import Sensor from './pages/Sensor';
 import SquareStick from './pages/SquareStick';
 import Tinder from './pages/Tinder';
 import Trigonometry from './pages/Trigonometry';
@@ -135,6 +136,13 @@ const ViewsNavigator = () => (
     <StartStack.Screen
       name="BezierCurves"
       component={BezierCurves}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <StartStack.Screen
+      name="Sensor"
+      component={Sensor}
       options={{
         headerShown: false,
       }}

@@ -1,6 +1,4 @@
-import { DefaultTheme } from 'styled-components/native';
-
-const theme: DefaultTheme = {
+export default {
   tab: {
     active: '#66519E',
     background: '#fff',
@@ -22,5 +20,3 @@ const theme: DefaultTheme = {
     light: 'Nunito-Light',
   },
 };
-
-export default theme;

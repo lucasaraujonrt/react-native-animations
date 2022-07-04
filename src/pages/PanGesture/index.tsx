@@ -10,7 +10,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { clamp, withBouncing } from 'react-native-redash';
 
-import { Background, Header, HyperComponent } from '@mobile/components';
+import { Header, HyperComponent } from '@mobile/components';
 import { PanGestureConstants } from '@mobile/constants';
 import useDimensions from '@mobile/hooks/useDimensions';
 import theme from '@mobile/theme';

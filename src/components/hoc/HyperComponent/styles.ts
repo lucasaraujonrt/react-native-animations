@@ -1,3 +1,4 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
 interface IStyleProps {
@@ -5,7 +6,7 @@ interface IStyleProps {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export const Container = styled.SafeAreaView`
+export const Container = styled(SafeAreaView)`
   flex: 1;
   background-color: ${({ backgroundColor }: IStyleProps) => backgroundColor};
 `;

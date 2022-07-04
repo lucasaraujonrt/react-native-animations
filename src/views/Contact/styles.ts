@@ -61,6 +61,7 @@ export const Float = styled.View`
 export const TextFloat = styled.Text`
   font-size: ${Window.fontScale(16)}px;
   color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.fonts.regular};
 `;
 
 export const Pressable = styled.Pressable.attrs({
@@ -74,4 +75,5 @@ export const MyLove = styled.Text`
   text-decoration-color: ${({ theme }) => theme.colors.text};
   font-size: ${Window.fontScale(16)}px;
   color: ${({ theme }) => theme.colors.text};
+  font-family: ${({ theme }) => theme.fonts.medium};
 `;

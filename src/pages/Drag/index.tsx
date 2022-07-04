@@ -17,16 +17,18 @@ const styles = StyleSheet.create({
 const cards = [Cards.Card1, Cards.Card2, Cards.Card3];
 
 const Drag = () => (
-  <HyperComponent backgroundColor={theme.colors.background}>
-    <Header title="Drag" />
-    <SortableList item={{ width, height: CARD_HEIGHT + 32 }}>
-      {cards.map((card, index) => (
-        <View style={styles.card} key={index.toString()}>
-          <Card card={card} />
-        </View>
-      ))}
-    </SortableList>
-  </HyperComponent>
+  <>
+    <HyperComponent backgroundColor={theme.colors.background}>
+      <Header title="Drag" />
+      <SortableList item={{ width, height: CARD_HEIGHT + 32 }}>
+        {cards.map((card, index) => (
+          <View style={styles.card} key={index.toString()}>
+            <Card card={card} />
+          </View>
+        ))}
+      </SortableList>
+    </HyperComponent>
+  </>
 );
 
 export default Drag;

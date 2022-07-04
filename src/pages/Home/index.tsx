@@ -8,6 +8,7 @@ import Graph from '@mobile/assets/svg/components/sandbox/ic_graph.svg';
 import Mind from '@mobile/assets/svg/components/sandbox/ic_mind.svg';
 import Pan from '@mobile/assets/svg/components/sandbox/ic_pan.svg';
 import Phone from '@mobile/assets/svg/components/sandbox/ic_phone.svg';
+import Sensor from '@mobile/assets/svg/components/sandbox/ic_sensor.svg';
 import Tinder from '@mobile/assets/svg/components/sandbox/ic_tinder.svg';
 import {
   AnimationList as List,
@@ -90,6 +91,13 @@ const AnimationList: IAnimationList[] = [
     disabled: false,
   },
   {
+    name: 'Sensor',
+    navigateTo: 'Sensor',
+    type: 'reanimated',
+    icon: <Drag />,
+    disabled: false,
+  },
+  {
     name: 'Trigonometry',
     navigateTo: 'Trigonometry',
     type: 'reanimated',
@@ -100,6 +108,7 @@ const AnimationList: IAnimationList[] = [
 
 const Home = () => {
   const title = 'Sandbox';
+  const description = 'A collection of animations';
 
   return (
     <HyperComponent backgroundColor={theme?.colors?.background}>

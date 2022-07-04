@@ -27,7 +27,7 @@ const AboutMe: React.FC = () => {
   ];
 
   return (
-    <HyperComponent backgroundColor={theme.colors.primary}>
+    <HyperComponent backgroundColor={theme.colors.primary} scrollView>
       <Header title="About Me" />
       <S.WrapperMe
         delay={500}

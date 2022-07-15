@@ -1,4 +1,4 @@
-import { RectButton } from 'react-native-gesture-handler';
+import { RectButton, TouchableOpacity } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
 import * as Window from '@mobile/services/dimensions';
@@ -8,7 +8,7 @@ interface IProps {
   disabled?: boolean;
 }
 
-export const Container = styled(RectButton).attrs({
+export const Container = styled(TouchableOpacity).attrs({
   activeOpacity: 0.7,
   underlayColor: theme.colors.background,
 })`

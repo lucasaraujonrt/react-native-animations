@@ -10,7 +10,7 @@ import Npm from '@mobile/assets/svg/components/contact/ic_npm.svg';
 import Site from '@mobile/assets/svg/components/contact/ic_site.svg';
 import Twitter from '@mobile/assets/svg/components/contact/ic_twitter.svg';
 import { Header, HyperComponent } from '@mobile/components';
-import { contact, links } from '@mobile/config';
+import { contact } from '@mobile/config';
 import { navigateToWebView } from '@mobile/store/Web/action';
 import theme from '@mobile/theme';
 
@@ -50,6 +50,7 @@ const Contact = () => {
               opacity: 1,
               scale: 1,
             }}
+            onPres
           >
             <Top>
               <WrapperIcons onPress={() => navigateToWeb(contact.linkedin)}>

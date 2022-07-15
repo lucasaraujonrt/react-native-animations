@@ -11,7 +11,9 @@ import Home from './pages/Home';
 import Matrix from './pages/Matrix';
 import MindBlow from './pages/MindBlow';
 import PanGesture from './pages/PanGesture';
+import Parallax from './pages/Parallax';
 import PhoneCall from './pages/PhoneCall';
+import Progress from './pages/Progress';
 import Sensor from './pages/Sensor';
 import SquareStick from './pages/SquareStick';
 import Tinder from './pages/Tinder';
@@ -143,6 +145,20 @@ const ViewsNavigator = () => (
     <StartStack.Screen
       name="Sensor"
       component={Sensor}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <StartStack.Screen
+      name="Progress"
+      component={Progress}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <StartStack.Screen
+      name="Parallax"
+      component={Parallax}
       options={{
         headerShown: false,
       }}

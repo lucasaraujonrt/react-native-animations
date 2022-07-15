@@ -14,7 +14,7 @@ interface IAnimationListProps {
 
 const AnimationList = ({ children, index }: IAnimationListProps) => (
   <MotiView
-    delay={500 * index}
+    delay={300 * index}
     from={{
       opacity: 0,
       scale: 0.5,

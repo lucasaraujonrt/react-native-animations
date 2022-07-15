@@ -17,17 +17,17 @@ const Sensor: React.FC = () => {
   const animatedSensor = useAnimatedSensor(SensorType.ROTATION, {
     interval: 10,
   });
-  const style = useAnimatedStyle(() => {
-    console.log(animatedSensor.sensor.value);
-    const yaw = Math.abs(animatedSensor.sensor.value.yaw) * 200 + 20;
-    const pitch = Math.abs(animatedSensor.sensor.value.pitch) * 200 + 20;
 
-    console.log('yaw', yaw);
-    console.log('pitch', pitch);
+  const style = useAnimatedStyle(() => {
+    const qx = Math.abs(animatedSensor.sensor.value.qw as number);
+    const qy = Math.abs(animatedSensor.sensor.value.qy as number);
 
     return {
-      height: withTiming(yaw, { duration: 100 }), // <- usage
-      width: withTiming(pitch, { duration: 100 }),
+      transform: [
+        { translateX: withTiming(qx * 80, { duration: 100 }) },
+        { translateY: withTiming(qy * 80, { duration: 100 }) },
+      ],
+      width: withTiming(qx * 80, { duration: 100 }),
     };
   });
 
@@ -42,7 +42,9 @@ const Sensor: React.FC = () => {
           alignItems: 'center',
         }}
       >
-        <Animated.View style={[{ backgroundColor: 'blue' }, style]} />
+        <Animated.View
+          style={[{ backgroundColor: 'blue', height: 200, width: 300 }, style]}
+        />
       </View>
     </HyperComponent>
   );

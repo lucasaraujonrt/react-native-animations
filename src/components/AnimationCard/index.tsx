@@ -20,7 +20,8 @@ const AnimationCard = ({
   disabled,
 }: IAnimationCardProps) => (
   <S.Container
-    {...{ onPress: () => navigationService.navigate(navigateTo), disabled }}
+    disabled={disabled}
+    {...{ onPress: () => navigationService.navigate(navigateTo) }}
   >
     <S.Wrapper>
       <S.WrapperIcon>{icon}</S.WrapperIcon>

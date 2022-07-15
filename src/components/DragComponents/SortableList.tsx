@@ -22,7 +22,7 @@ const SortableList = ({
   const offsets = children.map((_, i) => ({ y: getY(height * i) }));
 
   return (
-    <ScrollView contentContainerStyle={{ height: children.length }}>
+    <ScrollView contentContainerStyle={{ height: children.length, flex: 1 }}>
       {children.map((child, index) => (
         <SortableItem
           {...{ offsets, index, width, height, activeCard }}

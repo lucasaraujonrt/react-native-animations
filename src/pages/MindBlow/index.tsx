@@ -8,9 +8,7 @@ import {
 } from 'react-native';
 
 import Me from '@mobile/assets/svg/aboutMe/ic_me.svg';
-import { Header, HyperComponent } from '@mobile/components';
 import { MindBlowConstants } from '@mobile/constants';
-import theme from '@mobile/theme';
 
 const Circle = ({ onPress, animatedValue }: any) => {
   const inputRange = [0, 0.001, 0.5, 0.501, 1];
@@ -63,7 +61,7 @@ const Circle = ({ onPress, animatedValue }: any) => {
                 {
                   scale: animatedValue.interpolate({
                     inputRange: [0, 0.5, 1],
-                    outputRange: [1, 8, 1],
+                    outputRange: [1, 7, 1],
                   }),
                 },
                 {
@@ -99,7 +97,6 @@ const MindBlow: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent />
       <Circle onPress={onPress} animatedValue={animatedValue} />
       <Me style={styles.logo} />
     </View>

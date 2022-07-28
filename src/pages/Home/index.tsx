@@ -108,7 +108,7 @@ const AnimationList: IAnimationList[] = [
     navigateTo: 'Sensor',
     type: 'reanimated',
     icon: <Drag />,
-    disabled: true,
+    disabled: false,
   },
   {
     name: 'Trigonometry',
